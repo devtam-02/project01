@@ -15,6 +15,7 @@ import com.devTam.project01.Respository.StudentRepository;
 public class StudentConfig {
 	@Bean
 	CommandLineRunner commandLineRunner(StudentRepository repository) {
+		repository.deleteAll();
 		return args ->{
 			Student tam = new Student(
 					"Nguyen Trong Tam",
@@ -24,6 +25,7 @@ public class StudentConfig {
 					"Hoang Duc Nam",
 					"namhoang22@gmail.com",
 					LocalDate.of(2002, Month.JUNE, 3));
+			
 			repository.saveAll(List.of(tam,nam));
 		};
 	}

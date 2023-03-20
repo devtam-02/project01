@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Remote style sheet -->
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <!-- Embedded style sheet -->
+        <style>
+            .container{
+                border: 1px solid;
+                padding: 10px;
+            }
+            .row{
+                padding: 0 10px; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container external internal" id="content">
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name:</th>
+                            <th>Email:</th>
+                            <th>Date of birth:</th>
+                            <th>Age:</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr th:each="y : ${students}">
+                            <td scope="row" th:text="${y.getName()}"></td>
+                            <td th:text="${y.getEmail()}"></td>
+                            <td th:text="${y.getDob()}"></td>
+                            <td th:text="${y.getAge()}"></td>
+                        </tr>
+                    </tbody>
+                    
+           
+                </table>
+            </div>
+        </div>
+    </body>
+
+</html>
